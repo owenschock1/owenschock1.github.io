@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Owen's Website</title>
+        <style>
+           body {
+                background-image:url(https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5e128e95ab5be6000762f657%2FBourbon-Street--New-Orleans--Louisiana--USA%2F960x0.jpg%3Ffit%3Dscale);
+                color: rgb(45, 45, 45);
+                padding: 10px;
+                font-family: 'Times New Roman', Times, serif;
+                background-size: cover;
+            }
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+            }
+        
+            /* navigation menu */
+            nav {
+                background: rgb(128, 0, 128);
+                margin: 0 auto;
+                margin-bottom: 20px;
+                border-radius: 30px;
+                display: flex;
+                padding: 10px;
+            }
+            h1 {
+                display: flex;
+                align-items: center;
+                color: black;
+                flex: 1;
+                margin: 0;
+            }
+            #nav-ul {
+                list-style-image: none;
+            }
+            .nav-li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        
+            /* main container area beneath menu */
+            main {
+                background: rgb(255, 246, 222);
+                display: flex;
+                border-radius: 30px;
+            }
+            .sidebar {
+                margin-right: 25px;
+                padding: 10px;
+            }
+            .sidebar-img {
+               width: 200px;
+                border: 4px silver ridge;
+                border-radius: 30px;
+            }
+            .content {
+                flex: 1;
+                padding: 15px;
+            }
+           
+            h2, h3 {
+                margin: 0px;
+            }
+            .content h1 {
+                color: black;
+            }
+            
+            #portfolio {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            
+            #portfolio li {
+                background: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+            
+            #portfolio li:hover {
+                background: #eee;
+            } 
+            
+            #portfolio a {
+                text-decoration: none;
+                color: #454545;
+            }
+        </style>
+    </head>
+
+    <body>
+      <div id="all-contents">
+          <nav>
+              <h1>Owen Website</h1>
+              <ul id="nav-ul">
+                  <li class="nav-li">
+                    <a class="nav-a" href="index.html"> Home </a>
+                  </li>
+                  <li class="nav-li">
+                    <a class="nav-a" href="portfolio.html"> Portfolio </a>
+                  </li>
+              </ul>
+          </nav>
+          <main>
+            <div class="content">
+              <h1>Portfolio</h1>
+              <ul id="portfolio">
+                <li><a href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
+                <li><a href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
+                <li><a href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>
+                <li><a href="Incrementor/">Incrementor : Become the best General Manager in the League </a></li>
+               
+              </ul>
+            </div>
+          </main>
+      </div>
+  
+      </div>
+    </body>
+</html>

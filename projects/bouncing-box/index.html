@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bouncing Box</title>
+	<script src="jquery.min.js"></script>
+	<style>
+		.box {
+			width: 70px;
+			height: 70px;
+			background-image: url(https://www.pngkit.com/png/full/795-7957998_posted-image-transparent-nfl-player.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			font-size: 300%;
+			text-align: center;
+			display: block;
+			position: absolute;
+			top: 100px;
+			left: 78px;  /* <--- Change me! */
+		}
+		.board{
+			height: 100vh;
+			background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/AmFBfield.svg/1200px-AmFBfield.svg.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+		} 
+	</style>
+	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
+</head>
+<body class="board">
+	<!-- HTML for the box -->
+	<div class="box">?</div>
+
+	<script>
+		(function(){
+			'use strict'
+			/* global jQuery */
+
+			//////////////////////////////////////////////////////////////////
+			/////////////////// SETUP DO NOT DELETE //////////////////////////
+			//////////////////////////////////////////////////////////////////
+			
+			var box = jQuery('.box');	// reference to the HTML .box element
+			var board = jQuery('.board');	// reference to the HTML .board element
+			var boardWidth = board.width();
+			var boardHeight = jQuery(window).height(); 
+	// the maximum X-Coordinate of the screen
+
+			// Every 50 milliseconds, call the update Function (see below)
+			setInterval(update, 50);
+			
+			// Every time the box is clicked, call the handleBoxClick Function (see below)
+			box.on('click', handleBoxClick);
+
+			// moves the Box to a new position on the screen along the X-Axis
+			function moveBoxTo(newPositionX, newPositionY) {
+				box.css("left", newPositionX);
+				box.css("top", newPositionY);
+			}
+
+			// changes the text displayed on the Box
+			function changeBoxText(newText) {
+				box.text(newText);
+			}
+
+			//////////////////////////////////////////////////////////////////
+			/////////////////// YOUR CODE BELOW HERE /////////////////////////
+			//////////////////////////////////////////////////////////////////
+			
+			// TODO 2 - Variable declarations 
+			var positionX = 0;
+			var points = 0;
+			var speed = 10;
+			var positionY = 0;
+			var speedY = 10;
+			var randNum = Math.random() * boardWidth;
+			var randNum2 = Math.random() * boardHeight
+
+			
+			/* 
+			This Function will be called 20 times/second. Each time it is called,
+			it should move the Box to a new location. If the box drifts off the screen
+			turn it around! 
+			*/
+			function update() {
+				positionX = positionX + speed;
+					moveBoxTo(positionX, positionY)
+				if (positionX > boardWidth) {
+					speed = -speed;
+				} else if (positionX <= 0) {
+					speed = speed * -1;
+				}; positionY = positionY + speedY;
+				if (positionY > boardHeight) {
+					speedY = -speedY
+				} else if (positionY <= 0) {
+					speedY = speedY * -1
+				};
+			};
+
+			/* 
+			This Function will be called each time the box is clicked. Each time it is called,
+			it should increase the points total, increase the speed, and move the box to
+			the left side of the screen.
+			*/
+			function handleBoxClick() {
+				positionX = randNum;
+				points = points + 1
+				changeBoxText(points);
+				if (speed === speed) {
+					speed += 5;
+				} else if (speed === -speed) {
+					speed -= 5;
+				}; positionY = randNum2 
+				if (speedY === speedY) {
+					speedY += 5;
+				} else if (speedY = -speedY) {
+					speedY -= 5
+				}
+
+
+			};
+		})();
+	</script>
+</body>
+</html>

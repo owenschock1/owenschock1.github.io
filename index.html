@@ -1,0 +1,114 @@
+<!DOCTYPE HTML> 
+<html>
+    <head>
+        <title>Owen's Website</title>
+        <style>
+            body {
+                background-image:url(https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5e128e95ab5be6000762f657%2FBourbon-Street--New-Orleans--Louisiana--USA%2F960x0.jpg%3Ffit%3Dscale);
+                background-size: cover;
+                color: rgb(45, 45, 45);
+                padding: 10px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            #all-contents {
+                max-width: 800px;
+                margin: auto;
+            }
+        
+            /* navigation menu */
+            nav {
+                background: rgb(128, 0, 128);
+                margin: 0 auto;
+                margin-bottom: 20px;
+                border-radius: 30px;
+                display: flex;
+                padding: 10px;
+            }
+            h1 {
+                display: flex;
+                align-items: center;
+                color: white;
+                flex: 1;
+                margin: 0;
+            }
+            #nav-ul {
+                list-style-image: none;
+            }
+            .nav-li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+        
+            /* main container area beneath menu */
+            main {
+                background: rgb(255, 246, 222);
+                display: flex;
+                border-radius: 30px;
+            }
+            .sidebar {
+                margin-right: 25px;
+                padding: 10px;
+            }
+            .sidebar-img {
+               width: 200px;
+                border: 4px silver ridge;
+                border-radius: 30px;
+            }
+            .content {
+                flex: 1;
+                padding: 15px;
+            }
+            #interests {
+                border: 4px silver ridge;
+                padding: 8px;
+                border-radius: 30px;
+            }
+            h2, h3 {
+                margin: 0px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- All content belongs here-->
+        <div id="all-contents">
+            <nav id="nav-ul">
+                <h1>Owen's Website</h1>
+                <ul>
+                    <li class="nav-li">
+                        <a href="index.html"> Home </a>
+                    </li>
+                    <li class="nav-li">
+                        <a href="portfolio.html"> Portfolio </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <main>
+                <!-- side bar-->
+                <div class="sidebar">
+                    <!-- Fix this image link!!-->
+                    <img class="sidebar-img" src="https://bloximages.newyork1.vip.townnews.com/lsureveille.com/content/tncms/assets/v3/editorial/f/99/f998137c-e8b4-11e9-bfb5-4b6fbd11207b/5d9ab4f714b0f.image.jpg">
+                </div>
+                <!-- content bar-->
+                <div class="content">
+                    <h2> Owen Schock </h2>
+                    <p> Sophmore at Mandeville High School </p> 
+                    <!-- Interests section-->
+                    <div id="interests">
+                        <h3> Interests </h3>
+                        <ul>
+                            <li> LSU Football </li>
+                            <li> Hanging out with my Friends</li>
+                            <li> Baseball</li>
+                        </ul>
+                    </div> 
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
