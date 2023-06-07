@@ -48,10 +48,10 @@ function makeCircle(id){
     
     // this gives the circle object all of the data that it needs to store
     circle.id = "#" + id;
-    circle.x = Math.random() * maXX + circleRadius;
+    circle.x = Math.random() * maxX + circleRadius;
     circle.y = Math.random() * maxY + circleRadius;
     circle.speedX = decideSpeed();
-    circle.speedY = desideSpeed();
+    circle.speedY = decideSpeed();
     
     return circle;
 }
@@ -63,7 +63,7 @@ function decideSpeed(){
 
 // this generates an id for a circle given the circle's number
 function getId(number){
-    return "circle" + number; ()
+    return "circle" + number; //()
 }
 
 // this adds a circle into the HTML
@@ -84,7 +84,7 @@ function addNewCircleElement(circle, id){
 //////////////////
 
 // this should move all of the circles
-function update){
+function update()  // ){ this is what is used to look like
 
     // loop over the circles array. We use the maxCircles variable instead of circles.length
     // to make seeing issues in the debugger slightly easier (in practice, you should use
@@ -93,7 +93,7 @@ function update){
         var circle = circles[j];
 
         // move the circle
-        moveCircle(circle);
+        makeCircle(circle);  //changed moveCircle to makeCircle
 
         // bounce the circle, if it hits a wall
         bounceCircle(circle);
@@ -117,7 +117,7 @@ function moveCircle(circle){
 function bounceCircle(circle){
 
     // this bounces off the left wall
-    if (circle.x < 0{
+    if (circle.x < 0) {                        // added a parenthesis
         circle.x -= circle.speedX;
         circle.speedX *= -1;
     }
