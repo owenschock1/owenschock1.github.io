@@ -50,7 +50,7 @@ function init() {
   snake.head = snake.body[0];
   
   // TODO 8: initialize the first apple
-
+  makeApple();
 
   // start update interval
   updateInterval = setInterval(update, 100);
@@ -87,7 +87,19 @@ function moveSnake() {
   column/row properties. 
   
   */
-  
+  for (i = 1; i < snake.body.length; i++ ) {
+    var snakeSquare = snake.body[i];
+    
+    // var nextSnakeSquare = "???";
+    var nextRow = snake.head.row - 1;
+    var nextColumn = snake.head.column - 1;
+    var nextDirection = snake.head + 1;
+    
+    snakeSquare.direction = nextDirection;
+    snakeSquare.row = nextRow;
+    snakeSquare.column = nextColumn;
+    repositionSquare(snakeSquare);
+}
    
   //Before moving the head, check for a new direction from the keyboard input
  checkForNewDirection();
@@ -95,11 +107,19 @@ function moveSnake() {
   
   /* 
   TODO 6: determine the next row and column for the snake's head
-  
   HINT: The snake's head will need to move forward 1 square based on the value
   of snake.head.direction which may be one of "left", "right", "up", or "down"
   */
-  
+  if (snake.head.direction === 'left') {
+    snake.head.column = snake.head.column - 1;
+  } else if (snake.head.direction === 'right') {
+    snake.head.column = snake.head.column + 1;
+  } else if (snake.head.direction === 'up') {
+    snake.head.row = snake.head.row - 1;
+  } else if (snake.head.direction === 'down') {
+    snake.head.row = snake.head.row + 1;
+  }
+  repositionSquare(snake.head);
   
 }
 
@@ -116,7 +136,15 @@ function checkForNewDirection(event) {
   }
 
   // FILL IN THE REST
-  
+  else if (activeKey === KEY.RIGHT) {
+    snake.head.direction = "right";
+  } 
+  else if (activeKey === KEY.UP) {
+    snake.head.direction = "up";
+  }
+  else if (activeKey === KEY.DOWN) {
+    snake.head.direction= "down";
+  }
   // console.log(snake.head.direction);     // uncomment me!
 }
 
@@ -127,8 +155,11 @@ function hasCollidedWithApple() {
   
   HINT: Both the apple and the snake's head are aware of their own row and column
   */
-  
+  if (snake.head.row === apple.row && snake.head.column === apple.column) {
+    return true
+  } else {
   return false;
+  }
 }
 
 function handleAppleCollision() {
@@ -149,6 +180,16 @@ function handleAppleCollision() {
   If the tail is moving "down", place the next snakeSquare above it.
   etc...
   */ 
+
+  if (snake.tail.direction === "left") {
+    makeSnakeSquare(snake.tail.row, snake.tail.column + 1);
+  } else if (snake.tail.direction === "right") {
+    makeSnakeSquare(snake.tail.row, snake.tail.column - 1);
+  } else if (snake.tail.direction === "up") {
+    makeSnakeSquare(snake.tail.row + 1, snake.tail.column);
+  } else if (snake.tail.direction === "down") {
+    makeSnakeSquare(snake.tail.row - 1, snake.tail.column);
+  }
   var row = snake.tail.row + 0;
   var column = snake.tail.column + 0;
   
@@ -177,8 +218,13 @@ function hasHitWall() {
   
   HINT: What will the row and column of the snake's head be if this were the case?
   */
-  
+  if (snake.head.row === -1 || snake.head.row === 21) {
+    return true;
+  } else if (snake.head.column === -1 || snake.head.column === 21) {
+    return true;
+  } else {
   return false;
+  }
 }
 
 function endGame() {
