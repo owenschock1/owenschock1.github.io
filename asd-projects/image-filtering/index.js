@@ -41,7 +41,7 @@ function applyFilter() {
       var rgbNumbers = rgbStringToArray(rgbString);
       rgbNumbers[RED] = 255;
       rgbString = rgbArrayToString(rgbNumbers);
-      rgbString = image[i][j];
+      image[i][j] = rgbString;
     }
   }
 }
@@ -53,7 +53,9 @@ function applyFilter() {
 
 
 // TODO 3: Create reddify function
-
+function reddify(arr) {
+  arr[RED] = 200;
+}
 
 // TODO 6: Create more filter functions
 
