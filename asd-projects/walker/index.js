@@ -15,6 +15,7 @@ function runProgram(){
     "UP": 38,
     "DOWN": 40,
     "RIGHT": 39
+    
   }
   // Game Item Objects
   var coordX = 0;
@@ -37,7 +38,7 @@ function runProgram(){
   function newFrame() {
     repositionGameItem();
     redrawGameItem();
-
+    
   }
   
   /* 
@@ -54,6 +55,7 @@ function runProgram(){
     } else if (event.which === KEY.RIGHT) {
       speedX = 5;
     }
+    
   }
   // function stops movement after releasing the key
   function handleKeyUp(event) {
@@ -66,6 +68,7 @@ function runProgram(){
     } else if (event.which === KEY.RIGHT) {
       speedX = 0;
     }
+    
   }
   
 
@@ -92,6 +95,8 @@ function repositionGameItem() {
 function redrawGameItem() {
   $('#walker').css("left", coordX)
               .css("top", coordY);
-}
+  
+ }
 
+ 
 }
