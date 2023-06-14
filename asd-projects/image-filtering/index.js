@@ -32,9 +32,11 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
+
+// Should alter color of selected Luigi picture
 function applyFilter() {
-  for (var i = 0; r < image.length; i++) {
-    for (var j = 0; j < image.length; c++) {
+  for (var i = 0; i < image.length; i++) {
+    for (var j = 0; j < image[i].length; j++) {
       var rgbString = image[i][j];
       var rgbNumbers = rgbStringToArray(rgbString);
       rgbNumbers[RED] = 255;
