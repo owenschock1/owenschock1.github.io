@@ -49,7 +49,7 @@ function applyFilter(filterFunction) {
 
 // TODO 7: Create the applyFilterNoBackground function
   function applyFilterNoBackground(filterFunction) {
-    var backgroundColor = [0][0];
+    var backgroundColor = image[0][0];
     for (var i = 0; i < image.length; i++) {
       for (var j = 0; j < image[i].length; j++) {
         var rgbString = image[i][j];
@@ -67,8 +67,8 @@ function applyFilter(filterFunction) {
 function keepInBounds(num) {
   // ternary operator acts in place of a conditional statement to set bounds for the rgb
   var tooLarge = num > 255 ? 255 : num;
-  var tooSmall = num < 0 ? 0 : num;
-  return tooSmall && tooLarge;
+  var tooSmall = num < 0 ? 0 : tooLarge;
+  return tooSmall;
    
 }
 
