@@ -1,3 +1,6 @@
+/*
+
+OLD STUFF
 
 body {
   background-color: darkgreen;
@@ -16,6 +19,71 @@ body {
   width: 50px;
   height: 50px;
   position: absolute;
+}
 /*   left: 100px; */  /* Uncomment if you want to set a "starting" position */
 /*   top: 100px;  */  /* Uncomment if you want to set a "starting" position */
+
+
+
+
+
+body {
+  background-color: white;
 }
+
+#board {
+  width: 700px;
+  height: 600px;
+  border: 1px solid grey;
+  background-color: black;
+  position: relative;
+}
+
+#paddleOne {
+  background: blue;
+  width: 20px;
+  height: 150px;
+  position:absolute;
+  border-radius: 15px;
+  top: 200px;
+
+
+}
+
+#paddleTwo {
+  background: red;
+  width: 20px;
+  height: 150px;
+  position:absolute;
+  border-radius: 15px;
+  top: 200px;
+  left: 680px;
+}
+
+#score  {
+  color: blue;
+  position:absolute;
+  top: 600px;
+}
+
+#score2 {
+  color: red;
+  position: absolute;
+  top: 600px;
+  left: 580px;
+  font-size: 32px
+}
+
+#pongBall {
+  background-color: gold;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  position: absolute;
+  top: 250px;
+  left: 320px; 
+
+  
+};
+
+
